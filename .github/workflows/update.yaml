@@ -1,0 +1,52 @@
+name: 'Update Website'
+
+on:
+  push:
+    branches: [$default-branch]
+
+  workflow_dispatch:
+
+  schedule:
+    - cron: '53 1 * * *'
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Count people
+        uses: sergeysova/jq-action@v2
+        id: people_count
+        with:
+          cmd: |
+            curl -s https://supercluster-iadb.s3.us-east-2.amazonaws.com/adb_mobile.json |\
+            jq '[.astronauts[] | select(.inSpace == true and (.species | match("Human"))) | .name] | length'
+
+      - name: Fill templates
+        run: |
+          mkdir static
+          sed 's/COUNT_GOES_HERE/${{ steps.people_count.outputs.value }}/' templates/index.template.html > static/index.html
+          sed 's/COUNT_GOES_HERE/${{ steps.people_count.outputs.value }}/' templates/count.template.txt > static/count.txt
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: ./static
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2

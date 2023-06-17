@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How many people are in space right now?</title>
+
+    <link rel="preconnect" href="https://api.fonts.coollabs.io">
+    <link rel="preconnect" href="https://cdn.fonts.coollabs.io" crossorigin>
+    <link href="https://api.fonts.coollabs.io/css2?family=Fira+Code:wght@600&display=swap" rel="stylesheet">
+
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            height: 100vh;
+            height: 100dvh;
+            padding-block: 5rem;
+            font-family: 'Fira Code', monospace;
+        }
+
+        #container {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            text-align: center;
+        }
+
+        #count {
+            font-size: 10rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div>
+            <h1>There are</h1>
+            <h1 id="count">COUNT_GOES_HERE</h1>
+            <h1>people<br>in space<br>right now.</h1>
+        </div>
+        <div>
+            <a href="https://www.supercluster.com/astronauts">Source</a>
+        </div>
+    </div>
+</body>
+
+</html>
