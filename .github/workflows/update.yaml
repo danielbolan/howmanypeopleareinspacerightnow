@@ -1,4 +1,4 @@
-name: 'Update Website'
+name: 'Take census'
 
 on:
   push:
