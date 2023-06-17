@@ -19,11 +19,31 @@
             padding: 0;
         }
 
+        :root {
+            --bg-color: #fffdf9;
+            --font-color: #080829;
+            --link-color: #6495e4;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-color: #181822;
+                --font-color: #f1ece2;
+                --link-color: #324d77;
+            }
+        }
+
         body {
+            background-color: var(--bg-color);
+            color: var(--font-color);
             height: 100vh;
             height: 100dvh;
             padding-block: 5rem;
             font-family: 'Fira Code', monospace;
+        }
+
+        a {
+            color: var(--link-color)
         }
 
         #container {
