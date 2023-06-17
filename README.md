@@ -4,4 +4,6 @@ I was sad when I first realized that [howmanypeopleareinspacerightnow.com](https
 
 Then I came across [Supercluster's wonderful astronaut database](https://www.supercluster.com/astronauts?ascending=false&inspace=true&limit=63&list=true&sort=launch%20order) and knew it would be perfect to get my display working again. However, they dump the full 5MB+ of JSON on you which would quickly overwhelm the MagTag's ESP32. This is a lunchbreak-sized reimplementation to parse things down to something smaller and get things up and running again.
 
-Updates every day at about 01:53 UTC.
+If you just need the number, you can find it [here.](https://dcb.lu/howmanypeopleareinspacerightnow/count.txt)
+
+Updates once a day.
