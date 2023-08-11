@@ -38,12 +38,12 @@
             color: var(--font-color);
             height: 100vh;
             height: 100dvh;
-            padding-block: 5rem;
+            /* padding-block: 5rem; */
             font-family: 'Fira Code', monospace;
         }
 
         a {
-            color: var(--link-color)
+            color: var(--link-color);
         }
 
         #container {
@@ -51,12 +51,16 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: space-between;
+            justify-content: space-around;
             text-align: center;
         }
 
         #count {
             font-size: 10rem;
+        }
+
+        #source {
+            margin-top: 2rem;
         }
     </style>
 </head>
@@ -67,9 +71,9 @@
             <h1>There are</h1>
             <h1 id="count">COUNT_GOES_HERE</h1>
             <h1>people<br>in space<br>right now.</h1>
-        </div>
-        <div>
-            <a href="https://www.supercluster.com/astronauts">Source</a>
+            <div id="source">
+                <a href="https://www.supercluster.com/astronauts">Source</a>
+            </div>
         </div>
     </div>
 </body>
